@@ -1,0 +1,60 @@
+@startuml
+
+left to right direction
+skinparam packageStyle rect
+
+package "Stack Memory" {
+
+  class main {
+    String name
+    List<String> list
+    int times = 10
+  }
+
+  class fill {
+    Collection<String> collection
+    String str
+    int times
+  }
+
+  class shrink {
+    String str
+    int newLength
+    char[] chars
+  }
+}
+
+package "Heap Memory" {
+  object nameObj {
+    value = "Kevin"
+  }
+
+  object listObj {
+    ArrayList<String>
+  }
+
+  object strObj {
+    value = "KevinKevin"
+  }
+
+  object shrunkStr {
+    value = "KvnKv"
+  }
+
+  object charsArray {
+    chars = ['K','v','n','K','v']
+  }
+}
+
+main::name --> nameObj
+main::list --> listObj
+
+fill::collection --> listObj
+fill::str --> strObj
+
+shrink::str --> strObj
+shrink::chars --> charsArray
+
+listObj --> shrunkStr : contains
+
+@enduml
