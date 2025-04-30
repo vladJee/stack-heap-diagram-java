@@ -15,6 +15,6 @@ The diagram illustrates the behavior of a Java program, specifically the interac
 - The `shrink` method is then called from within `fill`, creating its own local variables.
 
 ### Links:
-- All references on the stack correctly point to their corresponding objects in the heap.
+- All references on the stack correctly point to their corresponding objects in the heap..
 
 
